@@ -1,0 +1,30 @@
+{
+  "name": "ts-tdd",
+  "version": "1.0.0",
+  "description": "Example of usage TDD with TypeScript",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjamroziak/ts-tdd.git"
+  },
+  "keywords": [
+    "tdd",
+    "typescript",
+    "jest",
+    "testing"
+  ],
+  "author": "Paweł Jamroziak",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pjamroziak/ts-tdd/issues"
+  },
+  "homepage": "https://github.com/pjamroziak/ts-tdd#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0"
+  }
+}
