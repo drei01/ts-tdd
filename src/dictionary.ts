@@ -2,7 +2,14 @@ type Container<T> = {
   [key: string]: T
 };
 
-export class Dictionary<T> {
+export interface IDictionary<T> {
+  get(key: string): T;
+  put(key: string, value: T): void;
+  remove(key: string): void;
+  size(): number;
+}
+
+export class Dictionary<T> implements IDictionary<T> {
   private readonly container: Container<T>
   private length: number
 

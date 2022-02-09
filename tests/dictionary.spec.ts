@@ -1,7 +1,7 @@
-import { Dictionary } from '@app/dictionary';
+import { Dictionary, IDictionary } from '@app/dictionary';
 
 describe('Dictionary', () => {
-  let dictionary: Dictionary<string>;
+  let dictionary: IDictionary<string>;
   
   beforeEach(() => {
     dictionary = new Dictionary<string>();
@@ -11,7 +11,7 @@ describe('Dictionary', () => {
     expect(dictionary.size()).toBe(0);
   });
 
-  it('should put object on specific key', () => {
+  it('should put value at key', () => {
     dictionary.put('first', 'is it work?');
 
     expect(dictionary.size()).toBe(1);
@@ -24,7 +24,7 @@ describe('Dictionary', () => {
     expect(dictionary.size()).toBe(1)
   })
 
-  it('should remove object by key', () => {
+  it('should remove value by key', () => {
     dictionary.put('first', 'is it work?');
 
     dictionary.remove('first');
@@ -32,7 +32,7 @@ describe('Dictionary', () => {
     expect(dictionary.size()).toBe(0);
   });
 
-  it('throw error when key not found during remove', () => {
+  it('throw error when key not found - remove', () => {
     dictionary.put('first', 'is it work?');
 
     dictionary.remove('first');
@@ -41,14 +41,14 @@ describe('Dictionary', () => {
     expect(dictionary.size()).toBe(0)
   })
 
-  it('should return value by key', () => {
+  it('should get value by key', () => {
     dictionary.put('first', 'is it work?');
     const firstValue = dictionary.get('first');
 
     expect(firstValue).toBe('is it work?');
   })
 
-  it('throw error when key not found during get', () => {
+  it('throw error when key not found - get', () => {
     expect(() => dictionary.get('first')).toThrowError();
     expect(dictionary.size()).toBe(0)
   })
